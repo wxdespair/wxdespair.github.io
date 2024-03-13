@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>pytorch_load_model | wxdespair</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script><script>MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']] // 添加这行来支持行间公式
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="wxdespair" type="application/atom+xml">
+</head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">wxdespair</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">pytorch_load_model</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2022/01/23/pytorch_load_model/">2022-01-23</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h2 id="pytorch-load-model"><a href="#pytorch-load-model" class="headerlink" title="pytorch load model"></a>pytorch load model</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>在已训练并保存在<code>CPU</code>上的<code>GPU</code>上加载模型时，加载模型时经常由于训练和保存模型时设备不同出现读取模型时出现错误，在对跨设备的模型读取时候涉及到两个参数的使用，分别是<code>model.to(device)</code>和<code>map_location=devicel</code>两个参数，简介一下两者的不同。</p>
+<ul>
+<li>将<code>map_location</code>函数中的参数设置 <code>torch.load()</code>为 <code>cuda：device_id</code>。这会将模型加载到给定的GPU设备。</li>
+<li>调用<code>model.to(torch.device(&#39;cuda&#39;))</code>将模型的参数张量转换为<code>CUDA</code>张量，无论在<code>cpu</code>上训练还是<code>gpu</code>上训练，保存的模型参数都是参数张量不是<code>cuda</code>张量，因此，<code>cpu</code>设备上不需要使用<code>torch.to(torch.device(&quot;cpu&quot;))</code>。</li>
+</ul>
+<h3 id="2-示例"><a href="#2-示例" class="headerlink" title="2. 示例"></a>2. 示例</h3><p>了解了两者代表的意义，以下介绍两者的使用。</p>
+<h4 id="1-保存在GPU，在CPU加载-most"><a href="#1-保存在GPU，在CPU加载-most" class="headerlink" title="1. 保存在GPU，在CPU加载 (most)"></a>1. 保存在GPU，在CPU加载 (most)</h4><p><strong>保存</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.save(model.state_dict(), PATH)</span><br></pre></td></tr></table></figure>
+
+<p><strong>加载</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">device = torch.device(<span class="string">&#x27;cpu&#x27;</span>)</span><br><span class="line">model = TheModelClass(*args, **kwargs)</span><br><span class="line">model.load_state_dict(torch.load(PATH, map_location=device))</span><br></pre></td></tr></table></figure>
+
+<p><strong>解释</strong>：</p>
+<p>在使用<code>GPU</code>训练的<code>CPU</code>上加载模型时，请传递 <code>torch.device(&#39;cpu&#39;)</code>给<code>map_location</code>函数中的 <code>torch.load()</code>参数，使用<code>map_location</code>参数将张量下面的存储器动态地重新映射到<code>CPU</code>设备 。</p>
+<h4 id="2-保存在GPU，在GPU加载"><a href="#2-保存在GPU，在GPU加载" class="headerlink" title="2. 保存在GPU，在GPU加载"></a>2. 保存在GPU，在GPU加载</h4><p><strong>保存</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.save(model.state_dict(), PATH)</span><br></pre></td></tr></table></figure>
+
+<p><strong>加载</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">device = torch.device(<span class="string">&quot;cuda&quot;</span>)</span><br><span class="line">model = TheModelClass(*args, **kwargs)</span><br><span class="line">model.load_state_dict(torch.load(PATH))</span><br><span class="line">model.to(device)</span><br><span class="line"><span class="comment"># Make sure to call input = input.to(device) on any input tensors that you feed to the model</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解释</strong>：</p>
+<p>在<code>GPU</code>上训练并保存在<code>GPU</code>上的模型时，只需将初始化<code>model</code>模型转换为<code>CUDA</code>优化模型即可<code>model.to(torch.device(&#39;cuda&#39;))</code>。此外，请务必<code>.to(torch.device(&#39;cuda&#39;))</code>在所有模型输入上使用该 功能来准备模型的数据。请注意，调用<code>my_tensor.to(device)</code> 返回<code>my_tensorGPU上</code>的新副本。它不会覆盖 <code>my_tensor</code>。因此，请记住手动覆盖张量： <code>my_tensor = my_tensor.to(torch.device(&#39;cuda&#39;))</code></p>
+<h4 id="3-保存在CPU，在GPU加载"><a href="#3-保存在CPU，在GPU加载" class="headerlink" title="3. 保存在CPU，在GPU加载"></a>3. 保存在CPU，在GPU加载</h4><p><strong>保存：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.save(model.state_dict(), PATH)</span><br></pre></td></tr></table></figure>
+
+<p><strong>加载：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">device = torch.device(<span class="string">&quot;cuda&quot;</span>)</span><br><span class="line">model = TheModelClass(*args, **kwargs)</span><br><span class="line">model.load_state_dict(torch.load(PATH, map_location=<span class="string">&quot;cuda:0&quot;</span>))  <span class="comment"># Choose whatever GPU device number you want</span></span><br><span class="line">model.to(device)</span><br><span class="line"><span class="comment"># Make sure to call input = input.to(device) on any input tensors that you feed to the model</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解释：</strong></p>
+<p>在已训练并保存在<code>CPU</code>上的<code>GPU</code>上加载模型时，请将<code>map_location</code>函数中的参数设置 <code>torch.load()</code>为 <code>cuda：device_id</code>。这会将模型加载到给定的GPU设备。接下来，请务必调用<code>model.to(torch.device(&#39;cuda&#39;))</code>将模型的参数张量转换为<code>CUDA</code>张量。最后，确保<code>.to(torch.device(&#39;cuda&#39;))</code>在所有模型输入上使用该 函数来为<code>CUDA</code>优化模型准备数据。请注意，调用 <code>my_tensor.to(device)</code>返回<code>my_tensorGPU</code>上的新副本。它不会覆盖<code>my_tensor</code>。因此，请记住手动覆盖张量：<code>my_tensor = my_tensor.to(torch.device(&#39;cuda&#39;))</code></p>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">WX</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2022/01/23/pytorch_load_model/">https://wxdespair.github.io/2022/01/23/pytorch_load_model/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="https://wxdespair.github.io">WX的博客</a>！</span></div></blockquote></div></article><div class="p-info box"></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#pytorch-load-model"><span class="toc-number">1.</span> <span class="toc-text">pytorch load model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.2.</span> <span class="toc-text">2. 示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BF%9D%E5%AD%98%E5%9C%A8GPU%EF%BC%8C%E5%9C%A8CPU%E5%8A%A0%E8%BD%BD-most"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 保存在GPU，在CPU加载 (most)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BF%9D%E5%AD%98%E5%9C%A8GPU%EF%BC%8C%E5%9C%A8GPU%E5%8A%A0%E8%BD%BD"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 保存在GPU，在GPU加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BF%9D%E5%AD%98%E5%9C%A8CPU%EF%BC%8C%E5%9C%A8GPU%E5%8A%A0%E8%BD%BD"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 保存在CPU，在GPU加载</span></a></li></ol></li></ol></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2022/01/23/jupyter_notebook_mistaken_delete_recovery/">&lt; jupyter_notebook_Mistaken</a><a class="next" href="/2021/11/23/install_pybulez/">install_pybulez &gt;</a></div><div id="valine-comment"><style type="text/css">.night .v[data-class=v] a { color: #0F9FB4 !important; }
+.night .v[data-class=v] a:hover { color: #216C73 !important; }
+.night .v[data-class=v] li { list-style: inherit; }
+.night .v[data-class=v] .vwrap { border: 1px solid #223441; border-radius: 0; }
+.night .v[data-class=v] .vwrap:hover { box-shadow: 0 0 6px 1px #223441; }
+.night .v[data-class=v] .vbtn { border-radius: 0; background: none; }
+.night .v[data-class=v] .vlist .vcard .vh { border-bottom-color: #293D4E; }
+.night .v[data-class=v] .vwrap .vheader .vinput { border-bottom-color: #223441; }
+.night .v[data-class=v] .vwrap .vheader .vinput:focus { border-bottom-color: #339EB4; }
+.night .v[data-class=v] code, .night .v[data-class=v] pre,.night .v[data-class=v] .vlist .vcard .vhead .vsys { background: #203240 !important; }
+.night .v[data-class=v] code, .night .v[data-class=v] pre { color: #F0F0F0; font-size: 95%; }
+.v[data-class=v] .vcards .vcard .vh {border-bottom-color: #223441; }
+.night .v[data-class=v] .vcards .vcard .vcontent.expand:before {background: linear-gradient(180deg,rgba(38,57,73,.4),rgba(38,57,73,.9));}
+.night .v[data-class=v] .vcards .vcard .vcontent.expand:after {background: rgba(38,57,73,.9)}
+</style><div id="vcomment"></div><script src="//cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'',
+  appKey:'',
+  lang: 'zh-cn',
+  placeholder:'ヾﾉ≧∀≦)o Come on, say something...',
+  avatar:'identicon',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></section><footer><p>Copyright © 2016 - 2024 <a href="/." rel="nofollow">wxdespair</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>
