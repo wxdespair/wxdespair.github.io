@@ -1,3 +1,4 @@
+https://wxdespair.github.io/2021/10/09/federated-learning-cartoons/
 https://wxdespair.github.io/2024/03/13/hello-world/
 https://wxdespair.github.io/2021/10/08/federated-learning/
 https://wxdespair.github.io/about/index.html
@@ -14,6 +15,5 @@ https://wxdespair.github.io/2022/01/23/jupyter_notebook_mistaken_delete_recovery
 https://wxdespair.github.io/2022/01/23/pytorch_load_model/
 https://wxdespair.github.io/2021/11/23/install_pybulez/
 https://wxdespair.github.io/2021/10/25/conda-delete-base/
-https://wxdespair.github.io/2021/10/09/federated-learning-cartoons/
 https://wxdespair.github.io/2021/10/06/hexo-config/
 https://wxdespair.github.io/
