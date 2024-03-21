@@ -214,20 +214,6 @@
   </url>
   
   <url>
-    <loc>https://wxdespair.github.io/tags/%E6%9D%80%E9%A2%9C%E8%89%B2%E4%B8%8D/</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/tags/asd/</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wxdespair.github.io/tags/SSH/</loc>
     <lastmod>2024-03-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -242,7 +228,14 @@
   </url>
   
   <url>
-    <loc>https://wxdespair.github.io/tags/wordpress/</loc>
+    <loc>https://wxdespair.github.io/tags/%E6%9D%80%E9%A2%9C%E8%89%B2%E4%B8%8D/</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/tags/asd/</loc>
     <lastmod>2024-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -257,6 +250,13 @@
   
   <url>
     <loc>https://wxdespair.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/tags/wordpress/</loc>
     <lastmod>2024-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
