@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>ssh-github���û� | wxdespair</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script><script>MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']] // 添加这行来支持行间公式
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="wxdespair" type="application/atom+xml">
+</head><link rel="stylesheet" type="text/css" href="/plugins/highlight/atom-one-dark.min.css"><script type="text/javascript" src="/plugins/highlight/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();
+</script><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">wxdespair</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">ssh-github���û�</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2024/03/21/ssh-github%E5%A4%9A%E7%94%A8%E6%88%B7/">2024-03-21</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/">�����</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h2 id="��һ����ʹ��-SSH-��Ӧ���-GitHub-�˻�"><a href="#��һ����ʹ��-SSH-��Ӧ���-GitHub-�˻�" class="headerlink" title="��һ����ʹ�� SSH ��Ӧ��� GitHub �˻�"></a>��һ����ʹ�� SSH ��Ӧ��� GitHub �˻�</h2><blockquote>
+<p>ʹ��һ̨�����������ɶ�� SSH ��Կ�����Էֱ�ָ����� GitHub �û���Ҳ���԰󶨸�һ���˻���</p>
+<p>����һ�� SSH ��Կ���ܰ󶨶���˻����ڴ�֮ǰ��֪������л�ȫ�� Git ��Կ����ᵼ����ȫ����Կ��ֿ��˻�����Ӧʱ�ı������������˴��ġ�</p>
+<p>�����ķ�ʽ��<strong>ͨ�������ļ�ָ����ͬ�˻���Ӧ����Կ�ļ�</strong>����������Ҳ�ᵼ���������͵��ĸ��ֿ⣬���յ��ύ�߶��Ǳ��ص� Git �˻��������ǲֿ������ߣ�Ҳ�п��������ò���ȫ�����⣩�����൱��ʹ����Կ�ļ������ص� Git �˻��ϴ���Ȩ�ޣ��Ӷ����Խ������͡�</p>
+</blockquote>
+<h3 id="0-��������"><a href="#0-��������" class="headerlink" title="0. ��������"></a>0. ��������</h3><ol>
+<li><p>������� SSH ��Կ</p>
+</li>
+<li><p>�ҵ� SSH �� <code>config</code> �ļ����� <code>~/.ssh</code> Ŀ¼�£��༭�򴴽�һ����Ϊ <code>config</code> ���ļ���û���ļ����ͺ�׺��</p>
+</li>
+<li><p>����������Ϣ���� <code>config</code> �ļ��У�����Ϊÿ�� GitHub �û�ָ�� Host�����ҹ�����Ӧ�� SSH ��Կ�����磺</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">�û�1</span></span><br><span class="line">Host github.com-user1</span><br><span class="line">    HostName github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_user1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">�û�2</span></span><br><span class="line">Host github.com-user2</span><br><span class="line">    HostName github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_user2</span><br></pre></td></tr></table></figure>
+<p> ������������У�<code>id_rsa_user1</code> �� <code>id_rsa_user2</code> �ֱ���Ϊ������ͬ�� GitHub �û����ɵ�˽Կ�ļ���<code>Host</code>�ֶ���Ϊÿ�������Զ���ı�����<code>HostName</code> Ӧʼ���� <code>github.com</code> ��ʹ�� GitLab �� Gitee ��ʱ����Ҫ�޸ģ���<code>User</code> ͨ���� <code>git</code> ��</p>
+</li>
+<li><p>ʹ�� SSH ��Կ������Ҫ�� GitHub �ϵĲֿ���н���ʱ����Ҫʹ���� <code>config</code> �ļ���ָ���� Host ���������磬�����Ҫ��¡�û�1�Ĳֿ⣬Ӧ��ʹ�ã�</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com-user1:�û���/�ֿ���.git</span><br></pre></td></tr></table></figure>
+
+<p> ʹ�� <code>github.com-user1</code>�����߶�Ӧ�û�2������ <code>github.com-user2</code> ���滻<code>github.com</code>������ <code>git</code> �ͻ�ʹ����ȷ�� SSH ��Կ������֤��</p>
+</li>
+</ol>
+<h3 id="1-ʹ��ʾ��"><a href="#1-ʹ��ʾ��" class="headerlink" title="1. ʹ��ʾ��"></a>1. ʹ��ʾ��</h3><blockquote>
+<p>ʹ��һ����Ϊ <code>ssx</code> ���˻�����Ϊ����˻����� SSH ��Կ��������������</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">~/.ssh/config</span></span><br><span class="line">Host github.com-ssx</span><br><span class="line">    HostName github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_ssx</span><br></pre></td></tr></table></figure>
+
+<p>����������У�</p>
+<ul>
+<li><code>Host github.com-ssx</code> ��Ϊ����ض� GitHub �˻��� SSH ��Կ�Զ���ı���������ʹ���κ����֣�ֻҪ����������ġ�����ʹ�� <code>github.com-ssx</code> ������Ϊ��ʾ����������Լ�ס�����ʹ�� a,b,c �����Ĵ�����ָ����</li>
+<li><code>HostName github.com</code> ָ���� GitHub ��ʵ������������һ�ж����� GitHub ���ö���һ���ġ�</li>
+<li><code>User git</code> �� GitHub �ֿ�ʹ�õı�׼�û�����</li>
+<li><code>IdentityFile ~/.ssh/id_rsa_ssx</code>  ָ���� <code>ssx</code> �˻���Ӧ��˽Կ�ļ���ȷ��·�����ļ�������Կƥ�䡣</li>
+</ul>
+<p>���ú� <code>~/.ssh/config</code> �ļ��󣬵�Ҫʹ�� <code>ssx</code> �˻��� GitHub ���н��������磬��¡һ������ <code>ssx</code> �Ĳֿ⣩ʱ������ʹ���������</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com-ssx:ssx/�ֿ���.git</span><br></pre></td></tr></table></figure>
+
+<p>ͨ�����ַ�ʽ��<code>git</code> ����� <code>~/.ssh/config</code> �е����ã�ʹ�� <code>github.com-ssx</code> ��Ӧ��˽Կ�� GitHub ������֤���������÷�ʽ������ʹ�ö�� GitHub �˻��� SSH ��Կ������Ժͱ���ԡ�</p>
+<h3 id="2-�ύ������"><a href="#2-�ύ������" class="headerlink" title="2. �ύ������"></a>2. �ύ������</h3><p>��ʹ�� SSH ��Կ�� GitHub ���н���ʱ��ȷʵ����ʵ�����ܵ�¼�Ͳ������� GitHub ȷ���ύ���������ĸ��û�ִ�еģ��ǻ����ύʱʹ�õĵ����ʼ���ַ�������� SSH ��Կ�����仰˵��SSH��Կ����������֤����֤����������˭��������������Ϣ�������û����͵����ʼ���ַ�����ǻ��� <code>git</code> ���õ�<code>user.name</code>��<code>user.email</code>���á�</p>
+<p>���ԣ����û�ж���Ŀ�� Git ���ù���Ӧ�û���Ϣ���ͻᵼ������ʹ���ķ���Կ���ύ����Ϣ������ͬһ�������� Git ��ȫ���û��������ʽ����Ϊ������Ŀ�����û���Ϣ��</p>
+<h4 id="2-0-���o���L�u���Ϣ"><a href="#2-0-���o���L�u���Ϣ" class="headerlink" title="2.0 ���õ���Ŀ�û���Ϣ"></a>2.0 ���õ���Ŀ�û���Ϣ</h4><p>���նˣ���PowerShell�����л��� Git ��ĿĿ¼�£�Ȼ��ִ�����������������û����͵����ʼ���ַ��</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;���û���&quot;</span><br><span class="line">git config user.email &quot;�������ַ&quot;</span><br></pre></td></tr></table></figure>
+
+<p>�⽫ֻӰ�쵱ǰ��Ŀ�����ã�����ȫ����Ϣ����������ʹʹ�õ���ͬһ̨�����ϵ� SSH ��Կ������֤����ͬ����ĿҲ������ʾΪ��ͬ�û����ύ��</p>
+<p>���޸�ȫ����Ϣ��ִ�е������������Ӧ�����ڰ�װ Git ʱ��ʹ�õ����</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;���û���&quot;</span><br><span class="line">git config --global user.email &quot;�������ַ&quot;</span><br></pre></td></tr></table></figure>
+
+<p>�⽫��������ȫ��<code>~/.gitconfig</code>�ļ����Ժ������µ��ύ����ʹ������û����͵����ʼ���ַ����������Ŀ��������˸��ǡ�</p>
+<h4 id="2-1-������ʽ"><a href="#2-1-������ʽ" class="headerlink" title="2.1 ������ʽ"></a>2.1 ������ʽ</h4><p>����ֻ˵����߼�������չ����̸��</p>
+<ol>
+<li><p>ʹ������ʽ Git ���ã�Git ֧�ֻ���Ŀ¼���������ã�������ȫ�� <code>.gitconfig</code> ���޸ģ�Ϊ��ͬ��Ŀ¼ָ����ͬ�� <code>.gitconfig</code> �ļ���ÿ�ο��ܶ�Ҫȥ�޸ģ�������ֱ��ʹ���������õ�ǰ��Ŀ�û���Ϣ��</p>
+</li>
+<li><p>ʹ�ýű�������Զ���������һ����ͬ�û���Ϣ�ı�����ʹ��������������л��û���Ϣ������Ϊ user1 ����һ����Ϊ switch-user1 �ı�����</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.switch-user1 &#x27;!git config user.name &quot;user1&quot; &amp;&amp; git config user.email &quot;user1@example.com&quot;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>Ȼ��ʹ�� <code>git switch-user1</code> ���л���ǰ�ֿ���û���Ϣ���������ݣ�</p>
+</li>
+<li><p>ʹ�� Git ���ӣ�����Git�Ĺ��ӣ��ر���<code>pre-commit</code>���ӣ������ύǰ�Զ������û���Ϣ������Ҫһ���̶ȵĽű���д����������ÿ���ύʱ�����Ŀ·�����������������ݴ�������Ӧ���û���Ϣ��</p>
+</li>
+</ol>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">WX</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2024/03/21/ssh-github%E5%A4%9A%E7%94%A8%E6%88%B7/">https://wxdespair.github.io/2024/03/21/ssh-github多用户/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="https://wxdespair.github.io">WX的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tags"></i><a href="/tags/SSH/">SSH</a><a href="/tags/GitHub/">GitHub</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BF%BD%EF%BF%BD%D2%BB%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%CA%B9%EF%BF%BD%EF%BF%BD-SSH-%EF%BF%BD%EF%BF%BD%D3%A6%EF%BF%BD%EF%BF%BD%EF%BF%BD-GitHub-%EF%BF%BD%CB%BB%EF%BF%BD"><span class="toc-number">1.</span> <span class="toc-text">��һ����ʹ�� SSH ��Ӧ��� GitHub �˻�</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD"><span class="toc-number">1.1.</span> <span class="toc-text">0. ��������</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%CA%B9%EF%BF%BD%EF%BF%BD%CA%BE%EF%BF%BD%EF%BF%BD"><span class="toc-number">1.2.</span> <span class="toc-text">1. ʹ��ʾ��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%EF%BF%BD%E1%BD%BB%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD"><span class="toc-number">1.3.</span> <span class="toc-text">2. �ύ������</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-0-%EF%BF%BD%EF%BF%BD%EF%BF%BDo%EF%BF%BD%EF%BF%BD%EF%BF%BDL%EF%BF%BDu%EF%BF%BD%EF%BF%BD%EF%BF%BD%CF%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.0 ���õ���Ŀ�û���Ϣ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%CA%BD"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.1 ������ʽ</span></a></li></ol></li></ol></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2024/03/21/%E6%90%AD%E5%BB%BA%E5%8F%AF%E4%BE%9B%E5%B1%80%E5%9F%9F%E7%BD%91%E8%AE%BF%E9%97%AE%E7%9A%84wordpress%E7%AB%99%E7%82%B9/">&lt; ��ɹ����������ʵ�wordpressվ��</a><a class="next" href="/2024/03/13/test/">test &gt;</a></div><div id="valine-comment"><style type="text/css">.night .v[data-class=v] a { color: #0F9FB4 !important; }
+.night .v[data-class=v] a:hover { color: #216C73 !important; }
+.night .v[data-class=v] li { list-style: inherit; }
+.night .v[data-class=v] .vwrap { border: 1px solid #223441; border-radius: 0; }
+.night .v[data-class=v] .vwrap:hover { box-shadow: 0 0 6px 1px #223441; }
+.night .v[data-class=v] .vbtn { border-radius: 0; background: none; }
+.night .v[data-class=v] .vlist .vcard .vh { border-bottom-color: #293D4E; }
+.night .v[data-class=v] .vwrap .vheader .vinput { border-bottom-color: #223441; }
+.night .v[data-class=v] .vwrap .vheader .vinput:focus { border-bottom-color: #339EB4; }
+.night .v[data-class=v] code, .night .v[data-class=v] pre,.night .v[data-class=v] .vlist .vcard .vhead .vsys { background: #203240 !important; }
+.night .v[data-class=v] code, .night .v[data-class=v] pre { color: #F0F0F0; font-size: 95%; }
+.v[data-class=v] .vcards .vcard .vh {border-bottom-color: #223441; }
+.night .v[data-class=v] .vcards .vcard .vcontent.expand:before {background: linear-gradient(180deg,rgba(38,57,73,.4),rgba(38,57,73,.9));}
+.night .v[data-class=v] .vcards .vcard .vcontent.expand:after {background: rgba(38,57,73,.9)}
+</style><div id="vcomment"></div><script src="//cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'',
+  appKey:'',
+  lang: 'zh-cn',
+  placeholder:'ヾﾉ≧∀≦)o Come on, say something...',
+  avatar:'identicon',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></section><footer><p>Copyright © 2016 - 2024 <a href="/." rel="nofollow">wxdespair</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>
