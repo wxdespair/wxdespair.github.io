@@ -2,7 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wxdespair.github.io/2021/10/06/hexo-config-2021/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2021/10/25/conda-delete-base/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2021/11/23/install_pybulez/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2022/01/23/delete_kernels_at_ubuntu/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2022/01/23/download_files_with_curl/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2022/01/23/get_matrix_inversion_in_numpy/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2022/01/23/jupyter_notebook_mistaken_delete_recovery/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2022/01/23/open_sublime_at_command_line/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2022/01/23/pytorch_load_model/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2022/02/18/unrar/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wxdespair.github.io/2024/03/21/ssh-github%E5%A4%9A%E7%94%A8%E6%88%B7/</loc>
+    
+    <lastmod>2024-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/2024/03/21/%E6%90%AD%E5%BB%BAhexo%E7%AB%99%E7%82%B9-2024/</loc>
     
     <lastmod>2024-03-21</lastmod>
     
@@ -21,15 +120,6 @@
   
   <url>
     <loc>https://wxdespair.github.io/2021/10/06/hello-world/</loc>
-    
-    <lastmod>2024-03-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/2022/02/18/unrar/</loc>
     
     <lastmod>2024-03-21</lastmod>
     
@@ -92,90 +182,9 @@
   </url>
   
   <url>
-    <loc>https://wxdespair.github.io/2022/01/23/open_sublime_at_command_line/</loc>
-    
-    <lastmod>2022-01-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/2022/01/23/delete_kernels_at_ubuntu/</loc>
-    
-    <lastmod>2022-01-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/2022/01/23/download_files_with_curl/</loc>
-    
-    <lastmod>2022-01-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wxdespair.github.io/2022/01/23/add_background_image_in_typora/</loc>
     
     <lastmod>2022-01-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/2022/01/23/get_matrix_inversion_in_numpy/</loc>
-    
-    <lastmod>2022-01-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/2022/01/23/jupyter_notebook_mistaken_delete_recovery/</loc>
-    
-    <lastmod>2022-01-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/2022/01/23/pytorch_load_model/</loc>
-    
-    <lastmod>2022-01-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/2021/11/23/install_pybulez/</loc>
-    
-    <lastmod>2021-11-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/2021/10/25/conda-delete-base/</loc>
-    
-    <lastmod>2021-10-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wxdespair.github.io/2021/10/06/hexo-config/</loc>
-    
-    <lastmod>2021-10-06</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -199,6 +208,13 @@
   
   <url>
     <loc>https://wxdespair.github.io/tags/GitHub/</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxdespair.github.io/tags/hexo/</loc>
     <lastmod>2024-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
